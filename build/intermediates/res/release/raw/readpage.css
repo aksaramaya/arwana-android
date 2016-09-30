@@ -1,0 +1,422 @@
+
+body{
+	margin:0px;
+	padding:0px;
+/* 	-webkit-user-select: none; */
+}
+
+#cover {
+	display : block;
+	margin : auto auto;
+}
+ 
+img {
+    max-width:100%;
+    height:auto;
+}
+/*lebar dan tingginya diset auto, nanti diset di control.js dengan menggunakan lebar screen*/
+#afd_pageturn { 
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    position: relative;
+    width: auto;
+    overflow: hidden;
+    padding:0px;
+    margin:0px;
+    border: 0px solid lightblue; 
+}
+
+/*lebar dan tingginya diset auto, nanti diset di control.js dengan menggunakan lebar afd_pageturn dikurangi cWPadding dan cHPadding*/
+#afd_content {	  
+    position: relative;
+    -webkit-column-count: auto;
+    -webkit-column-width: 500em;
+    -webkit-column-gap: 80px; /*jarak antar column*/
+    
+    border: none;
+    width: auto;
+    height: auto;
+   
+}
+
+#afd_break {
+    height: 0;
+}
+
+/* dari sini nentuin posisi menu, tinggi, leftnya, topnya, dsb */
+#afd_menu {
+    position:fixed; /*posisinya netep, ga ikut nyekrol*/
+    z-index:1; /*biar kliatan maju*/
+    left:0;
+    top:0;
+    height:48px;
+    display:none;
+    border: #CCCCCC;
+	border-bottom:1px;
+	border-left:0;
+	border-right:0;
+	border-top:0;
+	border-style:solid;
+    border-color:#cccccc; 
+	background-repeat:repeat-x;
+}
+
+#afd_bottomMenu{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    position:fixed; /*posisinya netep, ga ikut nyekrol*/
+    z-index:1;
+    left:0;
+    bottom:0;
+    height:48px;
+    border: #CCCCCC;
+    display:none;
+	border-bottom:0;
+	border-left:0;
+	border-right:0;
+	border-top:0;
+	border-style:solid;
+    border-color:#cccccc;
+	background-repeat:repeat-x;
+}
+
+#afd_menu #afd_bookmark{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    position:absolute;
+    right:15px;
+    width:40px;
+    height:48px;
+    text-align:right;
+    font-size:16px;
+}
+
+#afd_menu #afd_bookmark img{
+    position:relative;
+    top:10px;
+    height:30px;
+}
+
+#afd_menu #afd_zoom{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    position:absolute;
+    right:50px;
+    width:50px;
+    height:48px;
+    text-align:right;
+    font-size:16px;
+}
+
+#afd_menu #afd_zoom img{
+    position:relative;
+    width:38px;
+    top:10px;
+}
+
+#afd_menu #afd_title{
+    position:absolute;
+    //width:130px;
+    width:380px;
+    height:25px;
+    text-align:center;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    font-size:20px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#afd_menu #afd_TOC{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    position:absolute;
+    left : 70px;
+    //left:10px;
+    width: 50px;
+    height:48px;
+    text-align:left;
+    font-size:16px;
+}
+
+#afd_menu #afd_TOC img{
+    position:relative;
+    width:20px;
+    top:16px;
+}
+
+#afd_menu #afd_bookshelf{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    position:absolute;
+    left:10px;
+    width: 50px;
+    height:48px;
+    text-align:left;
+    font-size:16px;
+}
+
+#afd_menu #afd_bookshelf img{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    position:relative;
+    top:10px;
+    width:50px;
+}
+
+#afd_menu #afd_zoomin{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    position:absolute;
+    top:53px;
+    right:15px;
+    width:50px;
+    text-align:right;
+    display:none;
+    font-size:16px;
+}
+
+#afd_menu #afd_zoomin img{
+    width:40px;
+    height:35px;
+}
+
+#afd_menu #afd_zoomout{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    position:absolute;
+    top:53px;
+    width:50px;
+    right:67px;
+    text-align:left;
+    display:none;
+    font-size:16px;
+}
+
+#afd_menu #afd_zoomout img{
+    width:40px;
+    height:35px;
+}
+
+/*penentuan css untuk menu sampai sini*/
+
+
+/*dari sini nentuin posisi untuk bottom menu, termasuk height, left, top, dsb, mirip kyk menu atas*/
+#afd_bottomMenu #afd_precedingChapter{
+    float:left;
+    height:48px;
+    text-align:center;
+    width:20%;
+}
+#afd_bottomMenu #afd_precedingChapter img{
+    height:100%;
+}
+#afd_bottomMenu #afd_jumping{
+    float:left;
+    height:48px;
+    text-align:center;
+    width:20%;
+}
+#afd_bottomMenu #afd_jumping img{
+    height:100%;
+}
+#afd_bottomMenu #afd_brightness{
+    float:left;
+    height:48px;
+    text-align:center;
+    width:20%;
+}
+#afd_bottomMenu #afd_brightness img{
+    height:100%;
+}
+
+#afd_bottomMenu #afd_setting{
+    float:left;
+    height:48px;
+    text-align:center;
+    width:20%;
+}
+#afd_bottomMenu #afd_setting img{
+    height:100%;
+}
+#afd_bottomMenu #afd_nextChapter{
+    float:left;
+    height:48px;
+    text-align:center;
+    width:20%;
+}
+#afd_bottomMenu #afd_nextChapter img{
+    height:100%;
+}
+#afd_bottomMenu #afd_divide_1{
+    position:absolute;
+    width:2px;
+    height:48px;
+    left:20%;
+}
+#afd_bottomMenu #afd_divide_2{
+    position:absolute;
+    width:2px;
+    height:48px;
+    left:40%;
+}
+#afd_bottomMenu #afd_divide_3{
+    position:absolute;
+    width:2px;
+    height:48px;
+    left:60%;
+}
+#afd_bottomMenu #afd_divide_4{
+    position:absolute;
+    width:2px;
+    height:48px;
+    left:80%;
+}
+
+.afd_divide img{
+    height:100%;
+    width:100%;
+}
+/*sampai sini buat bottom menu*/
+
+/*ini untuk persentase halaman*/
+#afd_currentPage { 
+	text-align:center;
+    position: absolute;
+    /*
+    width: 100px;
+    bottom:10px;
+    right: 10px;
+    */
+    height : 18px;
+    width:100%;
+    bottom : 10px; 
+    font-size: 12px;
+}
+
+/*ini untuk panel skip sama brightness*/
+.afd_scale_panel{
+    display:none;
+    height:60px;
+    z-index:1; /*biar kliatan didepan*/
+	font-size:12px;
+	background-color:rgba(0,0,0,0.6); /*ben ketok transparan sithik*/
+	position:fixed; 
+	line-height:18px; 
+	bottom:0px;
+    left:0px;
+    right:0px;
+}
+
+.afd_scale_panel #afd_value{
+    position:absolute;
+    text-align:right;
+    top:19px;
+    width:10%; /*10 persen dari lebar panel*/
+}
+
+
+.afd_scale{
+	background:#A8A8A8 repeat-x 0 100%;
+	width:80%;
+	height:10px; 
+	position:relative; 
+	font-size:0px;
+    margin-left:15%;
+    top:23px;
+    border-radius:5px;
+}
+
+/*pointernya ni, yg bunder2 tu lo*/
+.afd_scale span{
+	background: no-repeat; 
+	width:22px;
+	height:22px; 
+	position:absolute; 
+	left:-11px;
+	top:-6px;
+	cursor:pointer;
+}
+
+/*progress barnya, kl mw ganti warna atau tinggi progressnya disini*/
+.afd_scale div{
+	background:#7FFF00 repeat-x;
+	width:0px; 
+	position:absolute; 
+	width:0;
+	left:0;
+	height:10px;
+	bottom:0;
+    border-radius:5px;
+}
+
+/*ini untuk share, tp mbuh rung tau dinggo*/
+#afd_sharingBox{
+    margin-top:40%;
+    display:none;
+    position:fixed;
+    width:80%;
+    margin-left:10%;
+    background-color:#cccccc;
+    z-index:1;
+    border-radius:5px;
+    text-align:center;
+}
+.afd_shareItem{
+    background-color:#ffffff;
+    margin:2px;
+    border-radius:5px;
+    text-align:center;
+}
+.afd_shareItem a:link,a:visited{
+    display:block;
+    height:100%;
+    width:80%;
+    margin-left:10%;
+    text-align:center;
+    text-decoration:none;
+}
+
+.afd_shareItem a img{
+    margin-top:8px;
+    max-height:25px;
+}
+
+.afd_shareItem a span{
+    display:block;
+    padding-bottom:5px;
+    font-size:28px;
+    width:100%;
+    text-align:center;
+}
+
+
+/*tolltip, yg diatas scale panel buat jumping atau skipping*/
+#tooltip {
+	position:fixed;
+    bottom : 80px; 
+    width: 500px;
+    height : 80px; 
+    z-index:1; 
+ }
+
+/*text tooltipnya nih*/
+#tooltip #text {
+	position:absolute; 
+	right:0px;
+	left:0px;
+	font-size:14px
+    border-radius:10px;
+    text-align:center;
+    padding:10px;
+	//background-color:rgba(0,0,0,0.6);
+	//color:white;
+	border-radius:10px;
+	height:48px;
+	/*example*/
+	background:#fffAF0;
+    color:#111; 
+    border:1px solid #DCA;  
+    font-weight: bold;
+}
+
+/*ini segitiga yang madep nduwur, biar seolah2 .. tau sendiri lah*/
+#tooltip #callout {
+	 position:absolute;
+	 bottom:2px;
+}
+
+.highlight { background-color: yellow }
+.note {text-decoration:none;border-bottom:solid 1px rgb(255,0,0);}

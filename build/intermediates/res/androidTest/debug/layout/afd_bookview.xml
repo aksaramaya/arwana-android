@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/afd_bookView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffaa"  >
+    <FrameLayout
+        android:id="@+id/afd_backcontentLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:orientation="vertical" > 
+    </FrameLayout>
+    <FrameLayout   android:visibility="visible"
+        android:id="@+id/afd_contentLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"  
+        android:orientation="vertical" > 
+    </FrameLayout>
+        
+</FrameLayout><!-- From: file:/home/yazid/aksaramaya-project/IJakarta/epubReader/src/main/res/layout/afd_bookview.xml --><!-- From: file:/home/yazid/aksaramaya-project/IJakarta/epubReader/build/intermediates/bundles/debug/res/layout/afd_bookview.xml -->
